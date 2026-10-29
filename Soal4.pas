@@ -8,9 +8,11 @@ var
 begin
     clrscr;
 
+    { Memasukkan jumlah mahasiswa }
     write('Masukkan jumlah mahasiswa: ');
     readln(n);
 
+    { Memasukkan nilai setiap mahasiswa }
     for i := 1 to n do
     begin
         writeln;
@@ -28,9 +30,11 @@ begin
         write('Masukkan nilai UAS: ');
         readln(uas[i]);
 
+        { Menghitung rata-rata dari empat komponen nilai }
         rata[i] := (tugas[i] + kuis[i] + uts[i] + uas[i]) / 4;
     end;
 
+    { Menampilkan hasil nilai seluruh mahasiswa }
     writeln;
     writeln('===== HASIL NILAI MAHASISWA =====');
 
@@ -44,6 +48,7 @@ begin
         writeln('Nilai UAS   : ', uas[i]:0:2);
         writeln('Rata-rata   : ', rata[i]:0:2);
 
+        { Menentukan kelulusan berdasarkan nilai rata-rata }
         if rata[i] >= 70 then
             writeln('Keterangan  : LULUS')
         else
